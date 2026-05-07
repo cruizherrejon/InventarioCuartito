@@ -30,7 +30,7 @@ namespace InventarioCuartito
             string nombre = textBox1.Text;
             int cantidad = (int)numericUpDown1.Value;
 
-            if (!string.IsNullOrEmpty(nombre))
+            if (!string.IsNullOrEmpty(nombre) && cantidad > 0)
             {
                 string articulo = $"{nombre} - Cantidad: {cantidad}";
                 listBox1.Items.Add(articulo);
@@ -39,6 +39,10 @@ namespace InventarioCuartito
                 numericUpDown1.Value = 0;
             }
 
+            else
+            {
+                MessageBox.Show("Rellena los datos de manera correcta");
+            }
 
         }
 
